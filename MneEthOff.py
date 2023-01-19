@@ -32,7 +32,7 @@ def mmdrza() :
         STRENGTH = int(rnd)
         LANGUAGE: str = (sellan)
         MNEMONIC = words
-        PASSPHRASE: str = "meherett"
+        PASSPHRASE: str = None
         assert is_mnemonic(mnemonic = words , language = sellan)
 
         bip44_hdwallet: BIP44HDWallet = BIP44HDWallet(cryptocurrency = Cryptocurrency , account = 0 , change = False ,
@@ -44,7 +44,7 @@ def mmdrza() :
         MmdrzaPanel = str(
             '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "bold on grey11"
-        console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
+        console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
         z += 1
         if addr in add :
