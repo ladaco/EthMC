@@ -23,10 +23,10 @@ def mmdrza() :
     while True :
         z += 1
 
-        langrnd = ['english' , 'french']
+        langrnd = ['english' , 'english']
         sellan = random.choice(langrnd)
         mne = Mnemonic(str(sellan))
-        listno = ["128" , "256"]
+        listno = ["128" , "128"]
         rnd = random.choice(listno)
         words = mne.generate(strength = int(rnd))
         STRENGTH = int(rnd)
@@ -42,7 +42,7 @@ def mmdrza() :
         addr = bip44_hdwallet.p2pkh_address()
         priv = bip44_hdwallet.private_key()
         MmdrzaPanel = str(
-            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]')
+            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
