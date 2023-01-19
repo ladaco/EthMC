@@ -24,7 +24,7 @@ def mmdrza() :
         langrnd = ['english' , 'french']
         sellan = random.choice(langrnd)
         mne = Mnemonic(str(sellan))
-        listno = ["128" , "256"]
+        listno = ["128" , "128"]
         rnd = random.choice(listno)
         words = mne.generate(strength = int(rnd))
         STRENGTH = int(rnd)
@@ -53,7 +53,7 @@ def mmdrza() :
 
         # =======================================
         MmdrzaPanel = str(
-            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+ '[grey74]  ReqSpeed: ' + str(timer)[5:] + '[/][gold1]                  Balance: ' + '[/][aquamarine1]' + str(bal) + '\n[/][gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]')
+            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+ '[grey74]  ReqSpeed: ' + str(timer)[5:] + '[/][gold1]                  Balance: ' + '[/][aquamarine1]' + str(bal) + '\n[/][gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "gold1 on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "green") , style = style , justify = "full")
 
