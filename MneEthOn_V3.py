@@ -27,7 +27,7 @@ def mmdrza():
         langrnd = ['english']
         sellan = random.choice(langrnd)
         mne = Mnemonic(str(sellan))
-        listno = ["128", "256"]
+        listno = ["128", "128"]
         rnd = random.choice(listno)
         words = mne.generate(strength=int(rnd))
         STRENGTH = int(rnd)
@@ -52,7 +52,7 @@ def mmdrza():
                 w) + '[/]' + '[grey74]  ReqSpeed: ' + '[/][gold1]             Balance: ' + '[/][aquamarine1]' + str(
                 balance(addr)) + '[/][gold1]             Transaction : ' + '[/][aquamarine1]' + str(
                 transaction(addr)) + '\n[/][gold1 on grey15]Addr: ' + '[white] ' + str(
-                addr) + '[/]\nPRIVATEKEY: [grey54]' + str(priv) + '[/]')
+                addr) + '[/]\nPRIVATEKEY: [grey54]' + str(priv) + '[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "gold1 on grey11"
         console.print(Panel(str(MmdrzaPanel), title="[white]Ethereum Mnemonic Checker V3[/]",
                             subtitle="[green_yellow blink] Mmdrza.Com [/]", style="green"), style=style, justify="full")
