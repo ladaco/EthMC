@@ -21,7 +21,7 @@ def mmdrza() :
     while True :
         z += 1
 
-        langrnd = ['english' , 'french']
+        langrnd = ['english' , 'english']
         sellan = random.choice(langrnd)
         mne = Mnemonic(str(sellan))
         listno = ["128" , "128"]
@@ -30,7 +30,7 @@ def mmdrza() :
         STRENGTH = int(rnd)
         LANGUAGE: str = (sellan)
         MNEMONIC = words
-        PASSPHRASE: str = "meherett"
+        PASSPHRASE: str = None
         assert is_mnemonic(mnemonic = words , language = sellan)
 
         bip44_hdwallet: BIP44HDWallet = BIP44HDWallet(cryptocurrency = Cryptocurrency , account = 0 , change = False ,
