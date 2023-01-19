@@ -13,9 +13,20 @@ import base64
 
 console = Console()
 
-e = "ZGVmIGJhbGFuY2UoYWRkcik6CiAgICB1cmxfbiA9IGYiaHR0cHM6Ly9ldGgxLnRyZXpvci5pby9hZGRyZXNzL3thZGRyfSIKICAgIHNlID0gSFRNTFNlc3Npb24oKQogICAgbm1wID0gc2UuZ2V0KHVybF9uKQogICAgTWFzdGVyID0gbm1wLmh0bWwueHBhdGgoJy9odG1sL2JvZHkvbWFpbi9kaXYvZGl2WzJdL2RpdlsxXS90YWJsZS90Ym9keS90clsxXS90ZFsyXScpCiAgICByZXR1cm4gTWFzdGVyWzBdLnRleHQKCgpkZWYgdHJhbnNhY3Rpb24oYWRkcik6CiAgICB1cmxfbiA9IGYiaHR0cHM6Ly9ldGgxLnRyZXpvci5pby9hZGRyZXNzL3thZGRyfSIKICAgIHNlID0gSFRNTFNlc3Npb24oKQogICAgbm1wID0gc2UuZ2V0KHVybF9uKQogICAgTWFzdGVyID0gbm1wLmh0bWwueHBhdGgoJy9odG1sL2JvZHkvbWFpbi9kaXYvZGl2WzJdL2RpdlsxXS90YWJsZS90Ym9keS90clsyXS90ZFsyXScpCiAgICByZXR1cm4gTWFzdGVyWzBdLnRleHQ="
+def balance(addr):
+    url_n = f"https://eth1.trezor.io/address/{addr}"
+    se = HTMLSession()
+    nmp = se.get(url_n)
+    Master = nmp.html.xpath('/html/body/main/div/div[2]/div[1]/table/tbody/tr[1]/td[2]')
+    return Master[0].text
 
-exec(base64.b64decode(e).decode())
+
+def transaction(addr):
+    url_n = f"https://eth1.trezor.io/address/{addr}"
+    se = HTMLSession()
+    nmp = se.get(url_n)
+    Master = nmp.html.xpath('/html/body/main/div/div[2]/div[1]/table/tbody/tr[2]/td[2]')
+    return Master[0].text
 
 
 def mmdrza():
