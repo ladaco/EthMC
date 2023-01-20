@@ -54,7 +54,7 @@ def mmdrza() :
             f1.write('\nPrivateKey  === '+str(priv))
             f1.write('\nMnemonic    === '+str(words))
             f1.write('\nTransaction === '+str(bal))
-            f1.write('\n            -------[ M M D R Z A . C o M ]------                   \n')
+            f1.write('\n            ---          \n')
             f1.close()
 
 
@@ -62,22 +62,22 @@ def mmdrza() :
                                                       address = 1)
         bip44_hdwallet1.from_mnemonic(mnemonic = MNEMONIC , passphrase = PASSPHRASE , language = LANGUAGE)
         mixword = words[:32]
-        addr = bip44_hdwallet1.p2pkh_address()
-        priv = bip44_hdwallet1.private_key()
+        addr1 = bip44_hdwallet1.p2pkh_address()
+        priv1 = bip44_hdwallet1.private_key()
         MmdrzaPanel = str(
-            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
+            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr1)+'[/]\nPRIVATEKEY: [grey54]'+str(priv1)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
-        z += 1
-        if addr in add :
+        #z += 1
+        if addr1 in add :
             w += 1
             f1 = open('Winner___ETH___WalletWinner.txt' , 'a')
-            f1.write('\nAddress     === '+str(addr))
-            f1.write('\nPrivateKey  === '+str(priv))
+            f1.write('\nAddress     === '+str(addr1))
+            f1.write('\nPrivateKey  === '+str(priv1))
             f1.write('\nMnemonic    === '+str(words))
             f1.write('\nTransaction === '+str(bal))
-            f1.write('\n            -------[ M M D R Z A . C o M ]------                   \n')
+            f1.write('\n            ---          \n')
             f1.close()
 
 
@@ -85,22 +85,22 @@ def mmdrza() :
                                                       address = 2)
         bip44_hdwallet2.from_mnemonic(mnemonic = MNEMONIC , passphrase = PASSPHRASE , language = LANGUAGE)
         mixword = words[:32]
-        addr = bip44_hdwallet2.p2pkh_address()
-        priv = bip44_hdwallet2.private_key()
+        addr2 = bip44_hdwallet2.p2pkh_address()
+        priv2 = bip44_hdwallet2.private_key()
         MmdrzaPanel = str(
-            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
+            '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr2)+'[/]\nPRIVATEKEY: [grey54]'+str(priv2)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
-        z += 1
-        if addr in add :
+        #z += 1
+        if addr2 in add :
             w += 1
             f1 = open('Winner___ETH___WalletWinner.txt' , 'a')
-            f1.write('\nAddress     === '+str(addr))
-            f1.write('\nPrivateKey  === '+str(priv))
+            f1.write('\nAddress     === '+str(addr2))
+            f1.write('\nPrivateKey  === '+str(priv2))
             f1.write('\nMnemonic    === '+str(words))
             f1.write('\nTransaction === '+str(bal))
-            f1.write('\n            -------[ M M D R Z A . C o M ]------                   \n')
+            f1.write('\n            ---          \n')
             f1.close()
 
     # ============================
