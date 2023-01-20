@@ -18,10 +18,10 @@ console = Console()
 
 
 def mmdrza() :
-    z = 1
+    z = 0
     w = 0
     while True :
-        z += 1
+        #z += 1
 
         langrnd = ['english' , 'english']
         sellan = random.choice(langrnd)
@@ -46,6 +46,13 @@ def mmdrza() :
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
+            f0 = open('Rezult_ETH_Wallets.txt' , 'a')
+            f0.write('\nAddr: '+str(addr))
+            f0.write('\nPriv: '+str(priv))
+            f0.write('\nMnemonic: '+str(words))
+            f0.write('\n     ---     \n')
+            f0.close()
+            
         z += 1
         if addr in add :
             w += 1
@@ -69,7 +76,7 @@ def mmdrza() :
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
-        #z += 1
+        z += 1
         if addr1 in add :
             w += 1
             f1 = open('Winner___ETH___WalletWinner.txt' , 'a')
@@ -92,7 +99,7 @@ def mmdrza() :
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
-        #z += 1
+        z += 1
         if addr2 in add :
             w += 1
             f1 = open('Winner___ETH___WalletWinner.txt' , 'a')
