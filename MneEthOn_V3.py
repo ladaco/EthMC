@@ -30,10 +30,10 @@ def transaction(addr):
 
 
 def mmdrza():
-    z = 1
+    z = 0
     w = 0
     while True:
-        z += 1
+        #z += 1
 
         langrnd = ['english']
         sellan = random.choice(langrnd)
@@ -78,7 +78,42 @@ def mmdrza():
             f1.write(f'\nMnemonic    === {words}')
             f1.write(f'\nBalance === {balance(addr)}')
             f1.write(f'\nTransaction === {transaction(addr)}')
-            f1.write(f'\n            -------[ M M D R Z A . C o M ]------                   \n')
+            f1.write(f'\n            -------------                   \n')
+            f1.close()
+
+
+        bip44_hdwallet1: BIP44HDWallet = BIP44HDWallet(cryptocurrency=Cryptocurrency, account=0, change=False,
+                                                      address=1)
+        bip44_hdwallet1.from_mnemonic(mnemonic=MNEMONIC, passphrase=PASSPHRASE, language=LANGUAGE)
+        mixword = words[:32]
+        addr1 = bip44_hdwallet1.p2pkh_address()
+        # addr ='0xfc43f5f9dd45258b3aff31bdbe6561d97e8b71de'
+        priv1 = bip44_hdwallet1.private_key()
+        # =======================================
+
+        # =======================================
+        MmdrzaPanel = str(
+            '[gold1 on grey15]Total Checked: ' + '[orange_red1]' + str(
+                z) + '[/][gold1 on grey15] ' + ' Win:' + '[white]' + str(
+                w) + '[/]' + '[grey74]  ReqSpeed: ' + '[/][gold1]             Balance: ' + '[/][aquamarine1]' + str(
+                balance(addr1)) + '[/][gold1]             Transaction : ' + '[/][aquamarine1]' + str(
+                transaction(addr1)) + '\n[/][gold1 on grey15]Addr: ' + '[white] ' + str(
+                addr1) + '[/]\nPRIVATEKEY: [grey54]' + str(priv1) + '[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
+        style = "gold1 on grey11"
+        console.print(Panel(str(MmdrzaPanel), title="[white]Ethereum Mnemonic Checker V3[/]",
+                            subtitle="[green_yellow blink] Mmdrza.Com [/]", style="green"), style=style, justify="full")
+
+        z += 1
+        iffer = '0 ETH'
+        if balance(addr1) != iffer:
+            w += 1
+            f1 = open('Winner___ETH___WalletWinner.txt', 'a')
+            f1.write(f'\nAddress     === {addr1}')
+            f1.write(f'\nPrivateKey  === {priv1}')
+            f1.write(f'\nMnemonic    === {words}')
+            f1.write(f'\nBalance === {balance(addr1)}')
+            f1.write(f'\nTransaction === {transaction(addr1)}')
+            f1.write(f'\n            -------------                   \n')
             f1.close()
 
     # ============================
