@@ -10,7 +10,7 @@ from lxml import html
 from mnemonic import Mnemonic
 from multiprocessing import Process
 
-filename = 'eth500.txt'
+filename = 'EthRich.txt'
 with open(filename) as f :
     add = f.read().split()
 add = set(add)
@@ -21,7 +21,7 @@ def mmdrza() :
     z = 0
     w = 0
     while True :
-        #z += 1
+       # z += 1
 
         langrnd = ['english' , 'english']
         sellan = random.choice(langrnd)
@@ -40,19 +40,23 @@ def mmdrza() :
         bip44_hdwallet.from_mnemonic(mnemonic = MNEMONIC , passphrase = PASSPHRASE , language = LANGUAGE)
         mixword = words[:32]
         addr = bip44_hdwallet.p2pkh_address()
+
+	#addr ='0x8484ef722627bf18ca5ae6bcf031c23e6e922b30'
+        #addr ='0x07ee55aa48bb72dcc6e9d78256648910de513eca'
         priv = bip44_hdwallet.private_key()
         MmdrzaPanel = str(
             '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr)+'[/]\nPRIVATEKEY: [grey54]'+str(priv)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
         style = "bold on grey11"
         console.print(Panel(str(MmdrzaPanel) , title = "[white]Ethereum Mnemonic Checker Offline V3[/]" , subtitle = "[green_yellow blink] Mmdrza.Com [/]" , style = "gold1") , style = style , justify = "full")
 
+        if addr !='' :
             f0 = open('Rezult_ETH_Wallets.txt' , 'a')
             f0.write('\nAddr: '+str(addr))
             f0.write('\nPriv: '+str(priv))
             f0.write('\nMnemonic: '+str(words))
             f0.write('\n     ---     \n')
             f0.close()
-            
+
         z += 1
         if addr in add :
             w += 1
@@ -60,7 +64,6 @@ def mmdrza() :
             f1.write('\nAddress     === '+str(addr))
             f1.write('\nPrivateKey  === '+str(priv))
             f1.write('\nMnemonic    === '+str(words))
-            f1.write('\nTransaction === '+str(bal))
             f1.write('\n            ---          \n')
             f1.close()
 
@@ -83,7 +86,6 @@ def mmdrza() :
             f1.write('\nAddress     === '+str(addr1))
             f1.write('\nPrivateKey  === '+str(priv1))
             f1.write('\nMnemonic    === '+str(words))
-            f1.write('\nTransaction === '+str(bal))
             f1.write('\n            ---          \n')
             f1.close()
 
@@ -106,7 +108,6 @@ def mmdrza() :
             f1.write('\nAddress     === '+str(addr2))
             f1.write('\nPrivateKey  === '+str(priv2))
             f1.write('\nMnemonic    === '+str(words))
-            f1.write('\nTransaction === '+str(bal))
             f1.write('\n            ---          \n')
             f1.close()
 
