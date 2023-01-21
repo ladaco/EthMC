@@ -39,7 +39,7 @@ def mmdrza() :
                                                       address = 0)
         bip44_hdwallet.from_mnemonic(mnemonic = MNEMONIC , passphrase = PASSPHRASE , language = LANGUAGE)
         mixword = words[:32]
-        addr = bip44_hdwallet.p2pkh_address()
+        addr = bip44_hdwallet.p2pkh_address().str.lower()
 
 	#addr ='0x8484ef722627bf18ca5ae6bcf031c23e6e922b30'
         #addr ='0x07ee55aa48bb72dcc6e9d78256648910de513eca'
@@ -72,7 +72,7 @@ def mmdrza() :
                                                       address = 1)
         bip44_hdwallet1.from_mnemonic(mnemonic = MNEMONIC , passphrase = PASSPHRASE , language = LANGUAGE)
         mixword = words[:32]
-        addr1 = bip44_hdwallet1.p2pkh_address()
+        addr1 = bip44_hdwallet1.p2pkh_address().str.lower()
         priv1 = bip44_hdwallet1.private_key()
         MmdrzaPanel = str(
             '[gold1 on grey15]Total Checked: '+'[orange_red1]'+str(z)+'[/][gold1 on grey15] '+' Win:'+'[white]'+str(w)+'[/]'+'\n[gold1 on grey15]Addr: '+'[white] '+str(addr1)+'[/]\nPRIVATEKEY: [grey54]'+str(priv1)+'[/]\nMNEMONIC: [grey54]'+str(words)+'[/]')
